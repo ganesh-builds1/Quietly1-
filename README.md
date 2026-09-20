@@ -2,18 +2,6 @@
 
 A dependency-free, mobile-first implementation of the five-screen Breathe concept.
 
-## Run
-
-From `D:\website\breathe-app`:
-
-```powershell
-python -m http.server 8080
-```
-
-Then open <http://localhost:8080>.
-
-You can also open `index.html` directly, though a local server is recommended.
-
 ## Screens and interactions
 
 - **Breathe:** animated breathing orb; tap it to pause/resume; live phase and elapsed time; audio toggle; Session Complete link.

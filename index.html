@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4ede1">
+  <title>Breathe — Meditation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell" id="app">
+  <section class="screen active" data-view="breathe" aria-labelledby="breathe-title">
+    <div class="content home-content">
+      <p class="eyebrow">Tuesday, soft morning</p>
+      <h1 id="breathe-title">Take a moment to <em>arrive</em>, Maya.</h1>
+      <button class="orb-wrap" id="breathToggle" aria-label="Pause breathing session" aria-pressed="true">
+        <span class="orb"></span><span class="orb-ring"></span>
+        <span class="orb-copy"><small id="breathPhase">Inhale</small><strong id="breathCount">four</strong></span>
+      </button>
+      <div class="session-meta"><span><b id="elapsed">2:48</b> elapsed</span><span><b>62</b> bpm</span><span><b>05:00</b> goal</span></div>
+      <article class="today">
+        <div class="today-art"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4ede1" stroke-width="1.5"><path d="M12 3c-3 4-3 8 0 12s3 6 0 6M12 3c3 4 3 8 0 12"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div class="grow"><p class="card-label">Tonight · Wind-down</p><h2>A pause before the moon</h2><p class="sub">9 min · Naomi Reyes</p></div>
+        <button class="round play" data-audio="today" aria-label="Play A pause before the moon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      </article>
+      <button class="complete-link" data-go="complete">End session &amp; reflect →</button>
+    </div>
+    <nav class="tabs" aria-label="Main navigation"></nav>
+  </section>
+
+  <section class="screen sleep" data-view="sleep" aria-labelledby="sleep-title">
+    <div class="content">
+      <p class="eyebrow">Tuesday, 10:24 pm</p><h1 id="sleep-title">Stories to <em>soften</em> into.</h1>
+      <article class="hero"><span class="glow"></span><p class="overline">— Featured tonight</p><h2>A walk through<br>the quiet forest</h2><p>28 min · Naomi Reyes · Voice</p><div class="play-row"><button class="round light play" data-audio="forest" aria-label="Play featured story"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span id="storyState">Tap to begin · auto-stops at sleep</span></div></article>
+      <p class="section-label">Continue the journey</p>
+      <div class="story-list">
+        <button class="story play" data-audio="ocean"><span class="story-art sage"></span><span><i>Ocean, slow tide</i><small>42 min · 8 chapters in</small></span><em>⌒ resume</em></button>
+        <button class="story play" data-audio="winter"><span class="story-art violet"></span><span><i>A house in winter</i><small>36 min · ★ saved</small></span><em>new</em></button>
+        <button class="story play" data-audio="mira"><span class="story-art orange"></span><span><i>Letters from Mira</i><small>24 min · spoken word</small></span><em>new</em></button>
+      </div>
+    </div><nav class="tabs" aria-label="Main navigation"></nav>
+  </section>
+
+  <section class="screen complete" data-view="complete" aria-labelledby="complete-title">
+    <div class="content centered"><p class="section-label">— Session complete</p><div class="calm-orb"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+      <h1 id="complete-title">Well done, <em>Maya</em>.</h1><p class="intro">Five minutes of breath you'll carry into the rest of the day.</p>
+      <div class="stats"><span><b>5'00&quot;</b><small>Session</small></span><span><b>58</b><small>BPM end</small></span><span><b>14<small>d</small></b><small>Streak</small></span></div>
+      <blockquote><small>A thought to carry</small>“What I make space for, returns to me softer.”</blockquote>
+      <div class="actions"><button class="outline" data-go="journal">Journal</button><button class="primary" data-go="breathe">Finish</button></div>
+    </div>
+  </section>
+
+  <section class="screen" data-view="journey" aria-labelledby="journey-title">
+    <div class="content journey-content"><p class="eyebrow">— Your year of breath</p><h1 id="journey-title">June, <em>14 quiet days</em>.</h1>
+      <article class="streak"><div class="ring"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="30"/><circle class="progress" cx="35" cy="35" r="30"/></svg><b>14<small>d</small></b></div><div><h2>A steady month.</h2><p>3 days more than May. Your best streak so far.</p></div></article>
+      <div class="calendar"><header><h2>June 2026</h2><span>← May · Jul →</span></header><div class="week"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div><div class="days" id="calendarDays"></div></div>
+      <div class="legend"><span><i class="session-dot"></i>Session</span><span><i class="reflection-dot"></i>Reflection only</span></div>
+    </div><nav class="tabs" aria-label="Main navigation"></nav>
+  </section>
+
+  <section class="screen" data-view="journal" aria-labelledby="journal-title">
+    <div class="content journal-content"><header class="journal-head"><div><p class="eyebrow">Tuesday, 8:42 AM</p><h1 id="journal-title">How are you, <em>really</em>?</h1></div><button class="close" data-go="breathe" aria-label="Close journal">✕</button></header>
+      <section class="mood-card"><p class="card-label">— Slide to feel</p><div class="mood-copy"><i>heavy</i><strong id="moodWord">brighter</strong><i>light</i></div><input id="mood" type="range" min="0" max="100" value="62" aria-label="Mood from heavy to light"></section>
+      <section class="tags"><p class="section-label">What's it about?</p><div id="tags"><button class="selected">work</button><button>rest</button><button class="selected">people</button><button>body</button><button>money</button><button id="addTag">+ add</button></div></section>
+      <label class="write"><span>— Write a sentence</span><textarea id="journalText">The morning felt unhurried for once. A long shower, a slow walk to the studio. Tomorrow's calendar is honestly</textarea></label>
+      <button class="primary save" id="saveJournal">Tuck this away ✦</button><p class="saved" id="saved" role="status"></p>
+    </div><nav class="tabs" aria-label="Main navigation"></nav>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
